@@ -64,6 +64,9 @@ correctly_guessed_letters = []
 
 while "_" in guessed_letters:
     guess = input("Guess a letter: ")
+    if len(guess) > 1:
+        print('You may only guess one letter at a time.')
+        sys.exit()
     if guess in word_to_guess:
         for i in range(len(word_to_guess)):
             if word_to_guess[i] == guess:
